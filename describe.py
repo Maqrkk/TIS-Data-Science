@@ -40,7 +40,6 @@ for index in range(0, len(dataset[1])):
         relevantFields.append(index)
 amountFields = len(relevantFields)
 
-
 # Build the header for the output
 header = "        "  # 8 spaces for the 'category'
 for i in range(1, amountFields + 1):
