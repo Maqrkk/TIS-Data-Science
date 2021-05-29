@@ -41,20 +41,11 @@ for i in range(1, len(dataset)):
         else:
             data[schoolIndex][index].append(float(row[relevantFields[index]]))
 
-# Sort all the lists
-for school in range(4):
-    for i in range(amountFields):
-        data[school][i].sort()
-    
-# Since the assignment asks to show one histogram, I'll show the one that I think to be homogeneous.
-courseIndex = 11
-amountBins = 20
+# I don't know what it means for two features to be 'similar'. So I chose these features because all colours are just big blobs here.
+course1 = 1
+course2 = 11
 for i in range(4):
-    plt.hist(data[i][courseIndex], density=True, alpha=0.5, label=houseNames[i], bins=amountBins)
-#plt.hist(data[1][courseIndex], density=True, alpha=0.5, label="Ravenclaw", bins=b)
-#plt.hist(data[2][courseIndex], density=True, alpha=0.5, label="Slytherin", bins=b)
-#plt.hist(data[3][courseIndex], density=True, alpha=0.5, label="Gryffindor", bins=b)
-plt.title(dataset[0][relevantFields[courseIndex]])
-plt.ylabel("Count")
-plt.xlabel("Scores")
+    plt.scatter(data[i][course1], data[i][course2])
+plt.xlabel(dataset[0][relevantFields[course1]])
+plt.ylabel(dataset[0][relevantFields[course2]])
 plt.show()
