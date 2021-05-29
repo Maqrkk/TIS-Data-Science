@@ -8,10 +8,6 @@ def isNumber(arg):
     except:
         return False
 
-# This will print a single float, formatted correctly
-def printSingleEntry(num):
-    print("{0:>14.6f}".format(num), end='')
-
 # Now open the file and parse it into a 2-dimensional list
 dataset = [x.split(',') for x in open("dataset_train.csv").readlines()]
 amountEntries = len(dataset) - 1; # subtract 1 for the header
